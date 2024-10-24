@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { SupermercadosComponent } from "./supermercados/supermercados.component";
 import { BrowserModule } from '@angular/platform-browser';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
@@ -12,6 +12,7 @@ import { PaginaPrincipalComponent } from "./pagina-principal/pagina-principal.co
 @Component({
   selector: 'app-root',
   standalone: true,
+<<<<<<< HEAD
   imports: [RouterOutlet,
             SupermercadosComponent,
             ProveedoresComponent,
@@ -19,6 +20,10 @@ import { PaginaPrincipalComponent } from "./pagina-principal/pagina-principal.co
             CategoriasComponent,
             EtiquetasComponent,
             PaginaPrincipalComponent], //acá importamos los componentes
+=======
+  imports: [RouterOutlet, SupermercadosComponent, ProveedoresComponent, ProductosComponent, CategoriasComponent, 
+    EtiquetasComponent, PaginaPrincipalComponent,RouterOutlet], //acá importamos los componentes
+>>>>>>> 3cb00d6501eafcb6dd4c4bf360c41537afd45121
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
