@@ -1,7 +1,9 @@
+import { Productos } from './../interfaces/Productos.interface';
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { elementAt } from 'rxjs';
-import { Producto } from '../interfaces/Productos';
+
 
 @Component({
   selector: 'app-productos',
@@ -10,41 +12,30 @@ import { Producto } from '../interfaces/Productos';
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
-export class ProductosComponent implements Productos {
+export class ProductosComponent {
 // crear funcionalidades (abm)
-productosArray:Producto[] =[]
-#id:number;
-nombreProducto:string;
-codigo:number;
-marca:string;
-cantidad:number;
-precioVenta:number;
-#precioCompra:number;
-
-constructor (id:number,nombreProducto:string,codigo:number,marca:string,cantidad:number,precioVenta:number,precioCompra:number){
-  this.#id =id;
-  this.#precioCompra=precioCompra;
-  this.precioVenta = precioVenta;
-  this.cantidad= cantidad;
-  this.marca = marca;
-  this.codigo = codigo;
-  this.nombreProducto = nombreProducto;
-}
+arrayProductos:Productos[]=[]
 
 
-agregarProducto (productito:Producto){
-  this.productosArray.push(productito);
+
+
+agregarProducto (productito:Productos){
+  this.arrayProductos.push(productito);
 }
 eliminarPoducto (id:number){
-const eliminar = this.productosArray.findIndex(element=>element.id===id);
-this.productosArray.splice(eliminar,1);
+
+const eliminar = this.arrayProductos.findIndex(element=>element.id===id);
+this.arrayProductos.splice(eliminar,1);
+
 }
 traerProducto (id:number){
-  if (this.productosArray.findIndex(element=>element.id===id)){
-    return this.productosArray.find(element=>element.id===id)
+ if (this.arrayProductos.findIndex(element=>element.id===id)){
+    return this.arrayProductos.find(element=>element.id===id)
      }else{
       return -1;
      }
+
+     
 
 }
 
