@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { SupermercadosComponent } from "./supermercados/supermercados.component";
 import { BrowserModule } from '@angular/platform-browser';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
@@ -12,7 +12,8 @@ import { PaginaPrincipalComponent } from "./pagina-principal/pagina-principal.co
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SupermercadosComponent, ProveedoresComponent, ProductosComponent, CategoriasComponent, EtiquetasComponent, PaginaPrincipalComponent], //acá importamos los componentes
+  imports: [RouterOutlet, SupermercadosComponent, ProveedoresComponent, ProductosComponent, CategoriasComponent, 
+    EtiquetasComponent, PaginaPrincipalComponent,RouterOutlet], //acá importamos los componentes
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

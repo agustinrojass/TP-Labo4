@@ -4,6 +4,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 
+
 export const routes: Routes = [
 
 
@@ -25,6 +26,8 @@ export const routes: Routes = [
 }
 
 
-
-
 ];
+
+
+
+
