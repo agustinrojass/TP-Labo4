@@ -12,8 +12,10 @@ import { PaginaPrincipalComponent } from "./pagina-principal/pagina-principal.co
 @Component({
   selector: 'app-root',
   standalone: true,
+
   imports: [RouterOutlet, SupermercadosComponent, ProveedoresComponent, ProductosComponent, CategoriasComponent, 
     EtiquetasComponent, PaginaPrincipalComponent,RouterOutlet], //acá importamos los componentes
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
