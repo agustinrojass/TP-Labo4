@@ -3,12 +3,13 @@ import { Productos } from './../interfaces/Productos.interface';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { elementAt } from 'rxjs';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NavbarComponent],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
