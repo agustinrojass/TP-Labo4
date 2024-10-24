@@ -7,6 +7,17 @@ import { Component } from '@angular/core';
   templateUrl: './repositores.component.html',
   styleUrl: './repositores.component.css'
 })
-export class RepositoresComponent {
 
+export class RepositoresComponent {
+    usuario : string;
+    contrasenia : string;
+    fechaCreacion : Date;
+    estado: boolean;
+
+    constructor(usuario:string,contrasenia:string,fechaCreacion:Date,estado:boolean){
+      this.usuario=usuario;
+      this.contrasenia=contrasenia;
+      this.fechaCreacion=fechaCreacion;
+      this.estado=estado;
+    }
 }
