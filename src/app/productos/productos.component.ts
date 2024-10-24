@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { elementAt } from 'rxjs';
+import { Producto } from '../interfaces/Productos';
 
 @Component({
   selector: 'app-productos',
@@ -9,12 +10,29 @@ import { elementAt } from 'rxjs';
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
-export class ProductosComponent {
+export class ProductosComponent implements Productos {
 // crear funcionalidades (abm)
-productosArray:Productos[] =[]
+productosArray:Producto[] =[]
+#id:number;
+nombreProducto:string;
+codigo:number;
+marca:string;
+cantidad:number;
+precioVenta:number;
+#precioCompra:number;
+
+constructor (id:number,nombreProducto:string,codigo:number,marca:string,cantidad:number,precioVenta:number,precioCompra:number){
+  this.#id =id;
+  this.#precioCompra=precioCompra;
+  this.precioVenta = precioVenta;
+  this.cantidad= cantidad;
+  this.marca = marca;
+  this.codigo = codigo;
+  this.nombreProducto = nombreProducto;
+}
 
 
-agregarProducto (productito:Productos){
+agregarProducto (productito:Producto){
   this.productosArray.push(productito);
 }
 eliminarPoducto (id:number){
@@ -34,26 +52,3 @@ traerProducto (id:number){
 
 
 
-export class Productos {
-  #id:number;
-  nombreProducto:string;
-  #codigo:number;
-  marca:string;
-  cantidad:number;
-  precioVenta:number;
-  #precioCompra:number;
-  constructor (id:number,nombreProducto:string,codigo:number,marca:string,cantidad:number,precioVenta:number,precioCompra:number){
-    this.#id=id;
-    this.nombreProducto=nombreProducto;
-    this.#codigo = codigo;
-    this.marca = marca;
-    this.cantidad = cantidad;
-    this.precioVenta = precioVenta;
-    this.#precioCompra = precioCompra;
-  }
-
-  ///Funciones del producto
-get id (){
-  return this.#id;
-}
-}

@@ -23,13 +23,13 @@ background: none;
     margin: 5px;
     background:none;
     padding: 15px;
-    border-radius: 15px;
+    border-radius: 7px;
     
 }
 
 
 .item-nav:hover{
-   box-shadow: 3px 3px 3px 3px black;
+   box-shadow: 3px 3px 3px 3px rgb(107, 107, 107);
 }
 a{
     background:none;
